@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markus Jimmy Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        .marquee {
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #f1f5f9;
+            color: #000000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 10px 0;
+            border-bottom: 2px solid #ccc;
+            text-align: center; /* Menambahkan ini untuk centering teks */
+        }
+        /* Styling untuk foto profil */
+        .profile-picture {
+            display: inline-block;
+            border-radius: 50%;
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            object-position: top;
+            border: 2px solid #ccc;
+        }
+        .highlight {
+            color: #FF0000; /* Warna untuk highlight */
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee">
+        <span>Selamat datang di <span class="highlight">Markus Jimmy</span> Site</span>
+    </div>
+    <!-- Halaman Utama -->
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <div class="w-1/4 bg-gray-100 p-8">
+            <div class="text-center">
+                <img src="Foto/Jim.jpeg" alt="Profile picture of Markus Jimmy" class="profile-picture">
+                <h1 class="text-xl font-bold mt-4">Markus Jimmy</h1>
+            </div>
+            <nav class="mt-8">
+                <ul class="space-y-4 text-center">
+                    <li><a class="text-blue-500 hover:text-black link-spacing" href="menu.html">HOME</a></li>
+                    <li><a class="hover:text-red-500 link-spacing" href="medsos.html">MEDIA SOSIAL</a></li>
+                    <li><a class="hover:text-red-500 link-spacing" href="CV.html">CURRICULUM VITAE</a></li>
+                    <li><a class="hover:text-red-500 link-spacing" href="galeri.html">GALERI FOTO</a></li>
+                    <li><a class="hover:text-red-500 link-spacing" href="contact.html">CONTACT</a></li>
+                </ul>                                     
+            </nav>                                     
+            <footer class="mt-8 text-center text-gray-500 text-sm border-t-2 border-gray-300 pt-4">
+                <p>© Copyright 2024 Markus Jimmy, All rights reserved.</p>
+            </footer>            
+        </div>
+<!-- Konten Utama -->
+<div class="w-full flex items-center justify-center bg-gray-50 min-h-screen">
+    <!-- Gambar yang Bergerak -->
+    <div class="moving-container">
+        <div class="menu-items">
+            <!-- Gambar 1 -->
+            <div class="menu-item">
+                <img src="Foto/jim4.jpeg" alt="Gambar 1">
+            </div>
+            <!-- Gambar 2 -->
+            <div class="menu-item">
+                <img src="Foto/jim2.jpeg" alt="Gambar 2">
+            </div>
+            <!-- Gambar 3 -->
+            <div class="menu-item">
+                <img src="Foto/jim3.jpeg" alt="Gambar 3">
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    /* Kontainer utama untuk gambar yang bergerak */
+    .moving-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        overflow: hidden; /* Menyembunyikan bagian gambar yang keluar dari kontainer */
+    }
+
+    .menu-items {
+        display: flex;
+        animation: moveLeft 15s linear infinite; /* Durasi animasi lebih cepat */
+        width: auto; /* Lebar dinamis untuk menyesuaikan gambar */
+    }
+
+    .menu-item {
+        display: inline-block;
+        flex-shrink: 0; /* Menghindari gambar mengecil */
+        text-align: center; /* Memastikan gambar dan font tetap terpusat */
+    }
+
+    .menu-item img {
+        max-width: 25vw; /* Gambar memiliki lebar maksimal 25% dari lebar layar (lebih kecil dari sebelumnya) */
+        height: auto; /* Menjaga proporsi tinggi gambar */
+        object-fit: contain; /* Menyesuaikan gambar agar tetap berada dalam area tanpa merusak rasio */
+    }
+
+    @keyframes moveLeft {
+        0% {
+            transform: translateX(100%); /* Mulai dari luar layar di sebelah kanan */
+        }
+        100% {
+            transform: translateX(-100%); /* Bergerak ke luar layar di sebelah kiri */
+        }
+    }
+</style>
+        </div>
+    </div>
+</body>
+</html>

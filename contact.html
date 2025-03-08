@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markus Jimmy Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      .marquee {
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        background-color: #f1f5f9;
+        color: #000000;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 10px 0;
+        border-bottom: 2px solid #ccc;
+        text-align: center;
+      }
+
+      .profile-picture {
+        display: inline-block;
+        border-radius: 50%;
+        width: 250px; /* Ukuran logo diperbesar */
+        height: 250px; /* Ukuran logo diperbesar */
+        object-fit: cover;
+        object-position: top;
+        border: 3px solid #ccc;
+        margin-top: 10px; /* Menyeimbangkan posisi di sidebar */
+      }
+
+      .contact-icons {
+        margin-top: 30px;
+      }
+
+      .contact-icons img {
+        width: 80px; /* Ukuran ikon diperbesar */
+        height: 80px; /* Ukuran ikon diperbesar */
+        margin: 0 auto;
+      }
+
+      .contact-icons p {
+        margin-top: 10px;
+        font-size: 16px; /* Membesarkan font label ikon */
+        font-weight: bold;
+      }
+
+      .main-content {
+        padding-top: 20px; /* Menyelaraskan konten di tengah */
+      }
+
+      .form-container {
+        width: 80%;
+        background-color: #f9fafb;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+      }
+
+      .form-container label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-container input,
+      .form-container textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      .form-container textarea {
+        height: 150px;
+        resize: vertical;
+      }
+
+      .form-container button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .form-container button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="marquee">
+      <span>Selamat datang di <span class="highlight">Markus Jimmy</span> Site</span>
+    </div>
+    <!-- Halaman Utama -->
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <div class="w-1/4 bg-gray-100 p-8">
+        <div class="text-center">
+          <img src="Foto/Jim.jpeg" alt="Profile picture of Markus Jimmy" class="profile-picture" />
+          <h1 class="text-2xl font-bold mt-4">Markus Jimmy</h1>
+        </div>
+        <nav class="mt-6">
+          <ul class="space-y-4 text-center">
+            <li><a class="text-blue-500 hover:text-black" href="menu.html">HOME</a></li>
+          </ul>
+        </nav>
+        <footer class="mt-8 text-center text-gray-500 text-sm border-t-2 border-gray-300 pt-4">
+          <p>© Copyright 2024 Markus Jimmy, All rights reserved.</p>
+        </footer>
+      </div>
+      <!-- Konten Utama -->
+      <div class="w-3/4 flex flex-col items-center justify-start bg-gray-50 main-content">
+        <p class="text-lg font-medium mt-4">Anda dapat menghubungi kami di bawah ini:</p>
+        <div class="contact-icons grid grid-cols-2 gap-12 text-center">
+          <style>
+            /* Menambahkan efek hover untuk memperbesar gambar */
+            .contact-icons img {
+              transition: transform 0.3s ease; /* Menambahkan transisi halus */
+            }
+            .contact-icons img:hover {
+              transform: scale(1.5); /* Membesarkan gambar 1.5x saat hover */
+            }
+          </style>
+          <!-- WhatsApp -->
+          <div>
+            <a href="https://wa.me/085878003541" target="_blank">
+              <img src="Foto/wat.jfif" alt="WhatsApp" />
+            </a>
+            <p>WhatsApp</p>
+          </div>
+          <!-- Email -->
+          <div>
+            <a href="mailto:markusjimmy882@gmail.com" target="_blank">
+              <img src="Foto/email.png" alt="Email" />
+            </a>
+            <p>Email</p>
+          </div>
+        </div>
+        <!-- Formulir Saran -->
+        <div class="form-container">
+          <h2 class="text-center text-xl font-bold mb-4">Kirim Saran atau Pertanyaan</h2>
+          <form action="markusjimmy882@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Kirim</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
