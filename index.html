@@ -20,106 +20,98 @@
             font-weight: bold;
             padding: 10px 0;
             border-bottom: 2px solid #ccc;
-            text-align: center; /* Menambahkan ini untuk centering teks */
+            text-align: center;
         }
-        /* Styling untuk foto profil */
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
         .profile-picture {
             display: inline-block;
             border-radius: 50%;
-            width: 170px;
-            height: 170px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
-            object-position: top;
+            object-position: center top; /* Fokus ke atas supaya kepala tidak terpotong */
             border: 2px solid #ccc;
+            animation: glow 1.5s infinite alternate; /* Efek cahaya berkedip */
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(0, 102, 255, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(0, 102, 255, 1); }
         }
         .highlight {
-            color: #FF0000; /* Warna untuk highlight */
+            color: #FF0000;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50">
     <div class="marquee">
         <span>Selamat datang di <span class="highlight">Markus Jimmy</span> Site</span>
     </div>
-    <!-- Halaman Utama -->
-    <div class="flex min-h-screen">
+    
+    <div class="flex flex-wrap min-h-screen">
         <!-- Sidebar -->
-        <div class="w-1/4 bg-gray-100 p-8">
+        <div class="w-full md:w-1/4 bg-gray-100 p-8">
             <div class="text-center">
-                <img src="Foto/Jim.jpeg" alt="Profile picture of Markus Jimmy" class="profile-picture">
+                <div class="profile-container">
+                    <img src="Foto/Jim.jpeg" alt="Profile picture of Markus Jimmy" class="profile-picture">
+                </div>
                 <h1 class="text-xl font-bold mt-4">Markus Jimmy</h1>
             </div>
             <nav class="mt-8">
                 <ul class="space-y-4 text-center">
-                    <li><a class="text-blue-500 hover:text-black link-spacing" href="menu.html">HOME</a></li>
-                    <li><a class="hover:text-red-500 link-spacing" href="medsos.html">MEDIA SOSIAL</a></li>
-                    <li><a class="hover:text-red-500 link-spacing" href="CV.html">CURRICULUM VITAE</a></li>
-                    <li><a class="hover:text-red-500 link-spacing" href="galeri.html">GALERI FOTO</a></li>
-                    <li><a class="hover:text-red-500 link-spacing" href="contact.html">CONTACT</a></li>
+                    <li><a class="text-blue-500 hover:text-black" href="menu.html">HOME</a></li>
+                    <li><a class="hover:text-red-500" href="medsos.html">MEDIA SOSIAL</a></li>
+                    <li><a class="hover:text-red-500" href="CV.html">CURRICULUM VITAE</a></li>
+                    <li><a class="hover:text-red-500" href="galeri.html">GALERI FOTO</a></li>
+                    <li><a class="hover:text-red-500" href="contact.html">CONTACT</a></li>
                 </ul>                                     
             </nav>                                     
             <footer class="mt-8 text-center text-gray-500 text-sm border-t-2 border-gray-300 pt-4">
-                <p>© Copyright 2024 Markus Jimmy, All rights reserved.</p>
+                <p>© 2024 Markus Jimmy, All rights reserved.</p>
             </footer>            
         </div>
-<!-- Konten Utama -->
-<div class="w-full flex items-center justify-center bg-gray-50 min-h-screen">
-    <!-- Gambar yang Bergerak -->
-    <div class="moving-container">
-        <div class="menu-items">
-            <!-- Gambar 1 -->
-            <div class="menu-item">
-                <img src="Foto/jim4.jpeg" alt="Gambar 1">
-            </div>
-            <!-- Gambar 2 -->
-            <div class="menu-item">
-                <img src="Foto/jim2.jpeg" alt="Gambar 2">
-            </div>
-            <!-- Gambar 3 -->
-            <div class="menu-item">
-                <img src="Foto/jim3.jpeg" alt="Gambar 3">
+
+        <!-- Konten Utama -->
+        <div class="w-full md:w-3/4 flex items-center justify-center p-4">
+            <div class="moving-container">
+                <div class="menu-items">
+                    <div class="menu-item"><img src="Foto/jim4.jpeg" alt="Gambar 1"></div>
+                    <div class="menu-item"><img src="Foto/jim2.jpeg" alt="Gambar 2"></div>
+                    <div class="menu-item"><img src="Foto/jim3.jpeg" alt="Gambar 3"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<style>
-    /* Kontainer utama untuk gambar yang bergerak */
-    .moving-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        overflow: hidden; /* Menyembunyikan bagian gambar yang keluar dari kontainer */
-    }
 
-    .menu-items {
-        display: flex;
-        animation: moveLeft 15s linear infinite; /* Durasi animasi lebih cepat */
-        width: auto; /* Lebar dinamis untuk menyesuaikan gambar */
-    }
-
-    .menu-item {
-        display: inline-block;
-        flex-shrink: 0; /* Menghindari gambar mengecil */
-        text-align: center; /* Memastikan gambar dan font tetap terpusat */
-    }
-
-    .menu-item img {
-        max-width: 25vw; /* Gambar memiliki lebar maksimal 25% dari lebar layar (lebih kecil dari sebelumnya) */
-        height: auto; /* Menjaga proporsi tinggi gambar */
-        object-fit: contain; /* Menyesuaikan gambar agar tetap berada dalam area tanpa merusak rasio */
-    }
-
-    @keyframes moveLeft {
-        0% {
-            transform: translateX(100%); /* Mulai dari luar layar di sebelah kanan */
+    <style>
+        .moving-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 200px;
         }
-        100% {
-            transform: translateX(-100%); /* Bergerak ke luar layar di sebelah kiri */
+
+        .menu-items {
+            display: flex;
+            gap: 10px;
+            animation: moveLeft 10s linear infinite;
         }
-    }
-</style>
-        </div>
-    </div>
+
+        .menu-item img {
+            width: 20vw;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @keyframes moveLeft {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(calc(-100% - 10px)); }
+        }
+    </style>
 </body>
 </html>
