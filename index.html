@@ -1,117 +1,141 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Markus Jimmy Site</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <style>
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      .marquee {
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        background-color: #f1f5f9;
+        color: #000000;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 10px 0;
+        border-bottom: 2px solid #ccc;
+        text-align: center;
+      }
+      .profile-picture {
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        object-position: center top;
+        border: 2px solid #ccc;
+      }
+      .highlight {
+        color: #ff0000;
+      }
+      nav ul li a {
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+      .menu-item img {
+        width: 100vw;
+        max-width: 1200px;
+        height: auto;
+      }
+      .moving-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      .menu-items {
+        display: flex;
+        animation: moveLeft 20s linear infinite;
+        width: auto;
+      }
+      @keyframes moveLeft {
+        0% {
+          transform: translateX(100%);
         }
-        .marquee {
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-            background-color: #f1f5f9;
-            color: #000000;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 10px 0;
-            border-bottom: 2px solid #ccc;
-            text-align: center;
+        100% {
+          transform: translateX(-100%);
         }
-        .profile-container {
-            position: relative;
-            display: inline-block;
+      }
+      @media (max-width: 1024px) {
+        .w-1/4 {
+          width: 30%;
         }
         .profile-picture {
-            display: inline-block;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            object-position: center top; /* Fokus ke atas supaya kepala tidak terpotong */
-            border: 2px solid #ccc;
-            animation: glow 1.5s infinite alternate; /* Efek cahaya berkedip */
+          width: 120px;
+          height: 120px;
         }
-        @keyframes glow {
-            0% { box-shadow: 0 0 10px rgba(0, 102, 255, 0.5); }
-            100% { box-shadow: 0 0 20px rgba(0, 102, 255, 1); }
-        }
-        .highlight {
-            color: #FF0000;
-        }
-    </style>
-</head>
-<body class="bg-gray-50">
-    <div class="marquee">
-        <span>Selamat datang di <span class="highlight">Markus Jimmy</span> Site</span>
-    </div>
-    
-    <div class="flex flex-wrap min-h-screen">
-        <!-- Sidebar -->
-        <div class="w-full md:w-1/4 bg-gray-100 p-8">
-            <div class="text-center">
-                <div class="profile-container">
-                    <img src="Foto/Jim.jpeg" alt="Profile picture of Markus Jimmy" class="profile-picture">
-                </div>
-                <h1 class="text-xl font-bold mt-4">Markus Jimmy</h1>
-            </div>
-            <nav class="mt-8">
-                <ul class="space-y-4 text-center">
-                    <li><a class="text-blue-500 hover:text-black" href="menu.html">HOME</a></li>
-                    <li><a class="hover:text-red-500" href="medsos.html">MEDIA SOSIAL</a></li>
-                    <li><a class="hover:text-red-500" href="CV.html">CURRICULUM VITAE</a></li>
-                    <li><a class="hover:text-red-500" href="galeri.html">GALERI FOTO</a></li>
-                    <li><a class="hover:text-red-500" href="contact.html">CONTACT</a></li>
-                </ul>                                     
-            </nav>                                     
-            <footer class="mt-8 text-center text-gray-500 text-sm border-t-2 border-gray-300 pt-4">
-                <p>© 2024 Markus Jimmy, All rights reserved.</p>
-            </footer>            
-        </div>
-
-        <!-- Konten Utama -->
-        <div class="w-full md:w-3/4 flex items-center justify-center p-4">
-            <div class="moving-container">
-                <div class="menu-items">
-                    <div class="menu-item"><img src="Foto/jim4.jpeg" alt="Gambar 1"></div>
-                    <div class="menu-item"><img src="Foto/jim2.jpeg" alt="Gambar 2"></div>
-                    <div class="menu-item"><img src="Foto/jim3.jpeg" alt="Gambar 3"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <style>
-        .moving-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            height: 200px;
-        }
-
-        .menu-items {
-            display: flex;
-            gap: 10px;
-            animation: moveLeft 10s linear infinite;
-        }
-
         .menu-item img {
-            width: 20vw;
-            height: auto;
-            object-fit: cover;
+          width: 100vw;
         }
-
-        @keyframes moveLeft {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(calc(-100% - 10px)); }
+        nav ul li a {
+          font-size: 0.8rem;
         }
+      }
+      @media (max-width: 768px) {
+        .w-1/4 {
+          width: 100%;
+          text-align: center;
+        }
+        .profile-picture {
+          width: 100px;
+          height: 100px;
+        }
+        .menu-item img {
+          width: 100vw;
+        }
+        nav ul li a {
+          font-size: 0.7rem;
+        }
+      }
     </style>
-</body>
+  </head>
+  <body>
+    <div class="marquee">
+      <span>Selamat datang di <span class="highlight">Markus Jimmy</span> Site</span>
+    </div>
+    <div class="flex min-h-screen">
+      <div class="w-1/4 bg-gray-100 p-6">
+        <div class="text-center">
+          <img src="Foto/Jim.jpeg" alt="Profile picture of Markus Jimmy" class="profile-picture" />
+          <h1 class="text-xs font-bold mt-2">Markus Jimmy</h1>
+        </div>
+        <nav class="mt-4">
+          <ul class="space-y-2 text-center">
+            <li><a class="text-blue-500 hover:text-black" href="menu.html">HOME</a></li>
+            <li><a class="hover:text-red-500" href="medsos.html">MEDIA SOSIAL</a></li>
+            <li><a class="hover:text-red-500" href="CV.html">CURRICULUM VITAE</a></li>
+            <li><a class="hover:text-red-500" href="galeri.html">GALERI FOTO</a></li>
+            <li><a class="hover:text-red-500" href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+        <footer class="mt-4 text-center text-gray-500 text-xs border-t-2 border-gray-300 pt-2">
+          <p>© 2024 Markus Jimmy, All rights reserved.</p>
+        </footer>
+      </div>
+      <div class="w-full flex items-center justify-center bg-gray-50 min-h-screen">
+        <div class="moving-container">
+          <div class="menu-items">
+            <div class="menu-item">
+              <img src="Foto/jim4.jpeg" alt="Gambar 1" />
+            </div>
+            <div class="menu-item">
+              <img src="Foto/jim2.jpeg" alt="Gambar 2" />
+            </div>
+            <div class="menu-item">
+              <img src="Foto/jim3.jpeg" alt="Gambar 3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
