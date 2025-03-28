@@ -1,209 +1,223 @@
+<!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Halaman Curriculum Vitae</title>
+    <title>Curriculum Vitae - Markus Jimmy</title>
+    <link rel="stylesheet" href="desain.css" />
     <style>
-      .menu-item a {
-        text-decoration: none;
-        color: inherit;
+      /* Animasi Teks */
+      .moving-text {
+        display: inline-block;
+        white-space: nowrap;
+        animation: moveRightToLeft 20s linear infinite;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
       }
-      .menu-item {
+
+      @keyframes moveRightToLeft {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .container {
+        overflow: hidden;
+        width: 100%;
         text-align: center;
-        margin: 20px;
+        margin-bottom: 20px;
+      }
+
+      /* Menu */
+      .menu-container {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .menu-item {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-item:hover {
+        background-color: #0056b3;
+      }
+
+      /* Struktur CV */
+      .table1 {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+        background-color: #ff6347;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .body_atas {
+        text-align: center;
+      }
+
+      .judul_sub {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      /* Foto Profil */
+      .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        border-radius: 50%;
+        margin: 10px auto;
+        overflow: hidden;
+        box-shadow: 0 0 10px 4px rgba(173, 216, 230, 0.6); /* Warna biru muda */
+        animation: glowEffect 1.5s infinite alternate;
+      }
+
+      @keyframes glowEffect {
+        0% {
+          box-shadow: 0 0 5px 2px rgba(173, 216, 230, 0.3);
+        }
+        100% {
+          box-shadow: 0 0 15px 6px rgba(173, 216, 230, 0.6);
+        }
+      }
+
+      .profile-picture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 50%;
+        border: 3px solid #fff;
+      }
+
+      /* Responsif */
+      @media (max-width: 600px) {
+        .moving-text {
+          font-size: 16px;
+        }
+        .menu-item {
+          font-size: 16px;
+          padding: 8px 15px;
+        }
+        .table1 {
+          width: 95%;
+        }
+        .profile-container {
+          width: 120px;
+          height: 120px;
+        }
       }
     </style>
   </head>
   <body>
-    <html lang="id">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Animasi Teks</title>
-        <style>
-          .moving-text {
-            display: inline-block;
-            position: relative;
-            white-space: nowrap;
-            animation: moveRightToLeft 20s linear infinite;
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-          }
+    <!-- Animasi Teks -->
+    <div class="container">
+      <p class="moving-text">Selamat datang di halaman CV. Anda dapat kembali ke menu utama dengan menekan tombol di bawah.</p>
+    </div>
 
-          @keyframes moveRightToLeft {
-            0% {
-              transform: translateX(100%);
-            }
-            100% {
-              transform: translateX(-100%);
-            }
-          }
+    <!-- Menu Navigasi -->
+    <div class="menu-container">
+      <a href="index.html" class="menu-item">Home</a>
+    </div>
 
-          .container {
-            overflow: hidden;
-            width: 100%; /* Sesuaikan lebar area animasi */
-            text-align: center;
-          }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <p class="moving-text">Selamat datang di halaman CV. Anda dapat kembali ke menu utama dengan menekan tombol di bawah.</p>
-        </div>
-      </body>
-    </html>
-    <html lang="id">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kotak Biru Menu</title>
-        <style>
-          .menu-item {
-            display: inline-block;
-            background-color: #007bff; /* Warna biru */
-            color: white; /* Warna teks */
-            padding: 10px 20px; /* Jarak dalam kotak */
-            text-align: center;
-            text-decoration: none; /* Hilangkan garis bawah */
-            border-radius: 8px; /* Membulatkan sudut kotak */
-            font-size: 18px; /* Ukuran teks */
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
-          }
+    <!-- Konten CV -->
+    <table class="table1">
+      <tr>
+        <td class="body_atas" colspan="3">
+          <h1>CURRICULUM VITAE</h1>
+          <div class="profile-container">
+            <img src="poto/Jimmy.png" alt="Foto Markus Jimmy" class="profile-picture" />
+          </div>
+          <p id="nama">MARKUS JIMMY</p>
+          <p id="alamat">Jl. Raya Citra Garden 8, Jakarta</p>
+          <p><strong>WhatsApp:</strong> 085878003541</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="judul_sub">BIODATA</td>
+      </tr>
+      <tr>
+        <td>Tempat, Tanggal Lahir</td>
+        <td>:</td>
+        <td>Sulang Betung, 29 April 2003</td>
+      </tr>
+      <tr>
+        <td>Umur</td>
+        <td>:</td>
+        <td>21 Tahun</td>
+      </tr>
+      <tr>
+        <td>Jenis Kelamin</td>
+        <td>:</td>
+        <td>Laki-laki</td>
+      </tr>
+      <tr>
+        <td>Agama</td>
+        <td>:</td>
+        <td>Kristen Protestan</td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td>:</td>
+        <td>Mahasiswa</td>
+      </tr>
+      <tr>
+        <td>Pendidikan Terakhir</td>
+        <td>:</td>
+        <td>SMK Kristen Blora</td>
+      </tr>
 
-          .menu-item:hover {
-            background-color: #0056b3; /* Warna biru lebih gelap saat di-hover */
-          }
+      <!-- Pendidikan -->
+      <tr>
+        <td colspan="3" class="judul_sub">PENDIDIKAN FORMAL</td>
+      </tr>
+      <tr>
+        <td colspan="3">Kuliah S1 Teknik Informatika - STMIK Masa Depan, Tangerang</td>
+      </tr>
+      <tr>
+        <td colspan="3">Kuliah D3 Teknik Informatika - AMIK MAPAN, Tangerang</td>
+      </tr>
+      <tr>
+        <td colspan="3">SMK Kristen Blora, Jawa Tengah</td>
+      </tr>
+      <tr>
+        <td colspan="3">SMPN 2 Sekadau Hulu, Sungai Sambang</td>
+      </tr>
 
-          .menu-container {
-            text-align: center; /* Pusatkan kotak di halaman */
-            margin-top: 20px;
-          }
-        </style>
-      </head>
-      <body>
-        <div class="menu-container">
-          <a href="index.html" class="menu-item">Home</a>
-        </div>
-      </body>
-    </html>
+      <!-- Pekerjaan -->
+      <tr>
+        <td colspan="3" class="judul_sub">PEKERJAAN</td>
+      </tr>
+      <tr>
+        <td colspan="3">IT Konsultan</td>
+      </tr>
+      <tr>
+        <td colspan="3">Programmer</td>
+      </tr>
+      <tr>
+        <td colspan="3">Freelancer</td>
+      </tr>
+      <tr>
+        <td colspan="3">Apa saja yang penting halal</td>
+      </tr>
+    </table>
   </body>
-</html>
-<html>
-  <html>
-    <html>
-      <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <title>CURRICULUM VITAE - JIMMY</title>
-        <link rel="stylesheet" href="desain.css" />
-      </head>
-      <body class="body">
-        <table class="table1" width="800" align="center" bgcolor="#FF6347">
-          <>
-            <td class="body_atas" height="371" colspan="3">
-              <p align="center">
-                <span class="h1">CURRICULUM VITAE</span>
-              </p>
-              <div id="background-image">
-                <div id="isi-image" align="center">
-                  <img src="poto/Jimmy.png" align="center" width="100" height="100" />
-                </div>
-              </div>
-              <p align="center" id="nama">MARKUS JIMMY</p>
-              <p align="center" id="alamat">Jl. Raya Citra Garden 8 Jakarta, Daerah Khusus Ibukota Jakarta</p>
-              <p align="center">
-                <i class="fa-brands fa-whatsapp" style="font-weight: 800"></i> :
-                <span id="no_hp">085878003541</span>
-              </p>
-            </td>
-            <td colspan="3" class="judul_sub"><span>BIODATA</span></td>
-          </tr>
-            <td width="187"><i class="fa-regular fa-calendar-days"></i>&nbsp; Tempat, Tanggal Lahir</td>
-            <td width="11">:</td>
-            <td>Sulang Betung, 29 April 2003</td>
-          </tr>
-          <tr>
-            <td><i class="fa-solid fa-person-walking-luggage"></i>&nbsp;&nbsp;Umur</td>
-            <td>:</td>
-            <td>21 Tahun</td>
-          </tr>
-          <tr>
-            <td><i class="fa-regular fa-user"></i>&nbsp;&nbsp;Jenis Kelamin</td>
-            <td>:</td>
-            <td>Laki-laki</td>
-          </tr>
-          <tr>
-            <td><i class="fa-solid fa-mosque"></i>&nbsp;&nbsp;Agama</td>
-            <td>:</td>
-            <td>Kristen Protestan</td>
-          </tr>
-          <tr>
-            <td height="25"><i class="fa-solid fa-ring"></i>&nbsp;&nbsp;Status</td>
-            <td>:</td>
-            <td>Mahasiswa</td>
-          </tr>
-          <tr>
-            <td><i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp;Pendidikan Terakhir</td>
-            <td>:</td>
-            <td>SMK Kristen Blora</td>
-          </tr>
-          <tr>
-            <td colspan="3">&nbsp;</td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <span class="h3"><strong>PENDIDIKAN FORMAL : </strong></span>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <li>Kuliah S1 Teknik Informatika. Sekarang di STMIK Masa Depan, Tangerang</li>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <li>Kuliah D3 Teknik Informatika. Sekarang di AMIK MAPAN, Tangerang</li>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <li>SMK Kristen Blora - Jawa Tengah</li>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <li>SMPN 2 Sekadau Hulu, Sungai Sambang</li>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="3">&nbsp;</td>
-          </tr>
-          <tr>
-            <td colspan="3"><strong>PEKERJAAN :</strong></td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <li>Apa Aja yang penting halal</li>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <li>IT KONSULTAN</li>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <li>PROGRAMMER</li>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="3">
-              <li>Frellencer</li>
-            </td>
-          </tr>
-        </table>
-      </body>
-    </html>
-  </html>
 </html>
