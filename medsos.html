@@ -1,173 +1,96 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Markus Jimmy Site</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <style>
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      .marquee {
+        text-align: center;
+        background-color: #f1f5f9;
+        color: #000;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 10px 0;
+        border-bottom: 2px solid #ccc;
+      }
+      .profile-container {
+        text-align: center;
+      }
+      .profile-picture {
+        display: inline-block;
+        border-radius: 50%;
+        width: 170px;
+        height: 170px;
+        object-fit: cover;
+        object-position: top;
+        border: 2px solid #ccc;
+        animation: glow 1.5s infinite alternate;
+      }
+      @keyframes glow {
+        0% {
+          box-shadow: 0 0 5px #00f;
         }
-        .marquee {
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-            background-color: #f1f5f9;
-            color: #000000;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 10px 0;
-            border-bottom: 2px solid #ccc;
-            text-align: center; /* Menambahkan ini untuk centering teks */
+        100% {
+          box-shadow: 0 0 20px #00f;
         }
-        /* Styling untuk foto profil */
-        .profile-picture {
-            display: inline-block;
-            border-radius: 50%;
-            width: 170px;
-            height: 170px;
-            object-fit: cover;
-            object-position: top;
-            border: 2px solid #ccc;
-        }
-        .highlight {
-            color: #FF0000; /* Warna untuk highlight */
-        }
-    </style>
-</head>
-<body>
-    <div class="marquee">
-        <span>Selamat datang di <span class="highlight">Markus Jimmy</span> Site</span>
-    </div>
-    <!-- Halaman Utama -->
-    <div class="flex min-h-screen">
-        <!-- Sidebar -->
-        <div class="w-1/4 bg-gray-100 p-8">
-            <div class="text-center">
-                <img src="Foto/Jim.jpeg" alt="Profile picture of Markus Jimmy" class="profile-picture">
-                <h1 class="text-xl font-bold mt-4">Markus Jimmy</h1>
-            </div>
-            <nav class="mt-8">
-                <ul class="space-y-4 text-center">
-                    <li><a class="text-blue-500 hover:text-black" href="index.html">HOME</a></li>                                    
-                </ul>
-            </nav>
-            <footer class="mt-8 text-center text-gray-500 text-sm border-t-2 border-gray-300 pt-4">
-                <p>© Copyright 2024 Markus Jimmy, All rights reserved.</p>
-            </footer>            
-        </div>
-<!-- Konten Utama -->
-<div class="w-full flex items-center justify-center bg-gray-50 min-h-screen">
-    <!-- Ikon Sosial Media -->
-    <div class="social-media-container">
-        <div class="social-media-items">
-            <!-- Instagram -->
-            <div class="social-media-item">
-                <div class="light"></div> <!-- Lampu -->
-                <a href="https://www.instagram.com/jimbeliyau/profilecard/?igsh=NTRpbnN3cGJucWhh" target="_blank">
-                    <img src="Foto/ins.jfif" alt="Instagram">
-                </a>
-                <p>Instagram</p>
-            </div>
-            <!-- Facebook -->
-            <div class="social-media-item">
-                <div class="light"></div> <!-- Lampu -->
-                <a href="https://www.facebook.com/profile.php?id=61564110842732&mibextid=ZbWKwL" target="_blank">
-                    <img src="Foto/fb.png" alt="Facebook">
-                </a>
-                <p>Facebook</p>
-            </div>
-            <!-- TikTok -->
-            <div class="social-media-item">
-                <div class="light"></div> <!-- Lampu -->
-                <a href="https://www.tiktok.com/@beeliyau?_t=8rUOa2Eg3qJ&_r=1" target="_blank">
-                    <img src="Foto/tiktok.png" alt="TikTok">
-                </a>
-                <p>TikTok</p>
-            </div>
-            <!-- LinkedIn -->
-            <div class="social-media-item">
-                <div class="light"></div> <!-- Lampu -->
-                <a href="https://www.linkedin.com/in/markus-jimmy-109907297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                    <img src="Foto/in.png" alt="LinkedIn">
-                </a>
-                <p>LinkedIn</p>
-            </div>
-        </div>
-    </div>
-</div>
-<style>
-    /* Kontainer utama untuk ikon sosial media */
-    .social-media-container {
+      }
+      .social-media-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        overflow: hidden;
-        flex-wrap: wrap; /* Membuat elemen membungkus jika terlalu banyak */
-    }
-
-    .social-media-items {
-        display: flex;
-        gap: 40px; /* Spasi antar ikon lebih besar */
-    }
-
-    .social-media-item {
-        display: inline-block;
-        flex-shrink: 0;
-        text-align: center; /* Menambahkan teks di bawah gambar */
-        position: relative;
-    }
-
-    .light {
-        position: absolute;
-        top: -25px; /* Posisi lampu di atas gambar */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 80px;
-        background-color: #f5b200; /* Warna lampu kuning */
-        border-radius: 50%;
-        opacity: 0; /* Awalnya lampu tidak terlihat */
-        box-shadow: 0 0 20px rgba(245, 178, 0, 0.8); /* Efek cahaya yang menyebar */
-        transition: opacity 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .social-media-item img {
-        width: 120px; /* Ukuran ikon diperbesar */
-        height: 120px; /* Ukuran ikon diperbesar */
-        object-fit: contain; /* Menjaga gambar tetap proporsional */
-    }
-
-    .social-media-item p {
-        font-size: 16px; /* Ukuran font penjelasan */
-        margin-top: 10px; /* Jarak antara gambar dan teks */
-        color: #333; /* Warna teks */
-    }
-
-    .social-media-item a {
-        text-decoration: none; /* Menghilangkan underline pada link */
-    }
-
-    .social-media-item:hover img {
-        transform: scale(1.1); /* Efek hover, memperbesar ikon */
-        transition: transform 0.3s ease; /* Animasi efek hover */
-    }
-
-    .social-media-item:hover .light {
-        opacity: 1; /* Menyalakan lampu saat hover */
-        transform: translateX(-50%) translateY(-15px); /* Mengangkat lampu sedikit */
-        box-shadow: 0 0 30px rgba(245, 178, 0, 1); /* Membuat cahaya lebih besar saat hover */
-    }
-
-    .social-media-item:hover p {
-        color: #0073b1; /* Efek hover pada teks, mengganti warna */
-    }
-    
-</style>
-        </div>
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+      }
+      .social-media-item img {
+        width: 100px;
+        height: 100px;
+      }
+      .social-media-item:hover img {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="marquee">
+      <span>Selamat datang di <span class="text-red-500">Markus Jimmy</span> Site</span>
     </div>
-</body>
+    <div class="flex flex-col md:flex-row min-h-screen">
+      <div class="w-full md:w-1/4 bg-gray-100 p-8 profile-container">
+        <img src="Foto/Jim.jpeg" alt="Profile picture of Markus Jimmy" class="profile-picture" />
+        <h1 class="text-xl font-bold mt-4">Markus Jimmy</h1>
+        <nav class="mt-8 text-center">
+          <ul>
+            <li><a class="text-blue-500 hover:text-black" href="index.html">HOME</a></li>
+          </ul>
+        </nav>
+        <footer class="mt-8 text-center text-gray-500 text-sm border-t-2 border-gray-300 pt-4">
+          <p>&copy; 2024 Markus Jimmy. All rights reserved.</p>
+        </footer>
+      </div>
+      <div class="w-full flex flex-col items-center justify-center bg-gray-50 p-6">
+        <div class="social-media-container">
+          <a href="https://www.instagram.com/jimbeliyau" target="_blank" class="social-media-item">
+            <img src="Foto/ins.jfif" alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61564110842732" target="_blank" class="social-media-item">
+            <img src="Foto/fb.png" alt="Facebook" />
+          </a>
+          <a href="https://www.tiktok.com/@beeliyau" target="_blank" class="social-media-item">
+            <img src="Foto/tiktok.png" alt="TikTok" />
+          </a>
+          <a href="https://www.linkedin.com/in/markus-jimmy-109907297" target="_blank" class="social-media-item">
+            <img src="Foto/in.png" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
